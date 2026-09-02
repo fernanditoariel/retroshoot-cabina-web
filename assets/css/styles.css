@@ -82,9 +82,27 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
 }
 
 /* ---------- brand lockup ---------- */
-.brand { display: inline-flex; align-items: center; line-height: 0; }
-.brand img { height: 34px; width: auto; display: block; }
-.brand--foot img { height: 48px; }
+.brand { display: inline-flex; align-items: center; gap: 0.6rem; line-height: 1; }
+.brand__word {
+  font-family: "Lobster", var(--font-display), cursive;
+  font-weight: 400;
+  font-size: 1.62rem;
+  color: var(--cream);
+  letter-spacing: 0.005em;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+}
+.brand__tag {
+  font-family: var(--font-ui);
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+  color: var(--brass);
+  padding-left: 0.65rem;
+  border-left: 1px solid var(--line);
+}
+.brand--foot .brand__word { font-size: 2rem; }
+.brand--foot .brand__tag { font-size: 0.66rem; }
 
 /* ---------- buttons ---------- */
 .btn {
@@ -593,8 +611,8 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
 
 @media (max-width: 760px) {
   .nav__links { display: none; }
-  .nav__inner { height: 60px; }
-  .brand img { height: 30px; }
+  .nav__inner { height: 62px; }
+  .brand__word { font-size: 1.42rem; }
   .btn--sm { padding: 0.62em 0.95em; font-size: 0.78rem; }
   .hero { min-height: auto; display: block; padding-block: 6rem 3.5rem; }
   .hero__title { font-size: clamp(1.95rem, 1.5rem + 2.6vw, 3rem); max-width: 20ch; }
@@ -609,7 +627,8 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
 }
 
 @media (max-width: 480px) {
-  .brand img { height: 28px; }
+  .brand__word { font-size: 1.3rem; }
+  .brand__tag { display: none; }
   .btn--sm { padding: 0.55em 0.8em; font-size: 0.72rem; }
 }
 
