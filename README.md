@@ -23,21 +23,25 @@ python3 -m http.server 5178
 Cualquier hosting estático (Vercel, Netlify, GitHub Pages). Para Vercel:
 subir la carpeta como proyecto estático, sin framework, output = raíz.
 
-## Imágenes: reemplazar los placeholders
+## Imágenes
 
-Las fotos actuales son **placeholders** (`picsum.photos` con filtro sepia). Hay que
-cambiarlas por fotos reales de la cabina (las del feed de @retroshootcabina sirven).
-Guardar los archivos en `assets/img/` y cambiar los `src` en `index.html`.
+El sitio usa 4 fotos reales (sepia) alojadas en `assets/img/`, cada una en versión
+web y en miniatura para la tira animada:
 
-| Ubicación en `index.html` | Qué foto va | Tamaño sugerido |
-|---|---|---|
-| `.hero__bg img` | Ambiente de la cabina / cámara vintage, se ve muy oscurecida detrás del texto | 1600×1200 |
-| `.strip figure img` (x6) | Tiras de fotos y grupos divirtiéndose en la cabina | 440×560 c/u |
-| `.split__media img` | Cámara réflex / detalle del setup retro | 900×1120 |
-| `.bento__a` | Foto grupal fuerte, la mejor del carrete | 1200×800 |
-| `.bento__b` | Retrato vertical (pareja o quinceañera con props) | 700×1000 |
-| `.bento__c/d/e` | Detalle de props, tira impresa, cortina de fondo | 700×700 |
-| `og:image` (meta) | Igual que hero, versión 1200×630 | 1200×630 |
+| Archivo | Dónde se usa |
+|---|---|
+| `hero-boda.jpg` | fondo del hero (boda de Ana y Carlos) |
+| `evento-carnaval.jpg` | galería, tile grande |
+| `evento-15.jpg` | galería, tile vertical (15 de Lucía) |
+| `evento-boda.jpg` | galería, tile chico |
+| `experiencia-cabina.jpg` | sección "Mucho más que una cabina" + galería, tile ancho |
+| `tira-*.jpg` | miniaturas de la tira animada |
+
+El CSS les aplica un filtro sepia/latón por encima para unificar el look (buscar
+`sepia(` en `assets/css/styles.css` para ajustarlo). Para cambiar una foto,
+reemplazá el archivo con el mismo nombre (mantené el aspecto 16:9) o editá el `src`
+en `index.html`. Los originales sin comprimir están en `~/Downloads`
+(`Gemini_Generated_Image_*.jpeg`).
 
 ## Videos
 
@@ -50,7 +54,3 @@ embebidos desde Vimeo, en loop y sin sonido:
 Los archivos originales quedan guardados en `assets/video/` (`retroshoot.mp4` y
 `retroshoot-2.mp4`) por si hace falta re-subirlos o cambiar a video propio.
 Para reemplazar un reel, cambiá el ID en el `src` del `<iframe>` correspondiente en `index.html`.
-
-Consejo: subir las fotos ya con revelado cálido / sepia suave para que peguen con la
-estética. El CSS igual les aplica un filtro sepia por encima; si las fotos ya vienen
-tratadas, se puede bajar el filtro en `assets/css/styles.css` (buscar `sepia(`).
