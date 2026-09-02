@@ -39,12 +39,17 @@ Guardar los archivos en `assets/img/` y cambiar los `src` en `index.html`.
 | `.bento__c/d/e` | Detalle de props, tira impresa, cortina de fondo | 700×700 |
 | `og:image` (meta) | Igual que hero, versión 1200×630 | 1200×630 |
 
-## Video
+## Videos
 
-`assets/video/retroshoot.mp4` (el que pasaste, ~1,3 MB, vertical 9:16). Se reproduce
-solo, en silencio y en loop dentro de la sección "Así se vive una fiesta con RetroShoot".
-Para cambiarlo, reemplazá ese archivo manteniendo el nombre, o editá el `src` del
-`<video>` en `index.html`.
+La sección "Así se vive una fiesta con RetroShoot" muestra **dos reels verticales (9:16)**
+embebidos desde Vimeo, en loop y sin sonido:
+
+- https://vimeo.com/1223221432
+- https://vimeo.com/1223223145
+
+Los archivos originales quedan guardados en `assets/video/` (`retroshoot.mp4` y
+`retroshoot-2.mp4`) por si hace falta re-subirlos o cambiar a video propio.
+Para reemplazar un reel, cambiá el ID en el `src` del `<iframe>` correspondiente en `index.html`.
 
 Consejo: subir las fotos ya con revelado cálido / sepia suave para que peguen con la
 estética. El CSS igual les aplica un filtro sepia por encima; si las fotos ya vienen

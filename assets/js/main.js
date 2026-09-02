@@ -40,7 +40,7 @@
 
   /* ---- no autoplaying video loop when motion is reduced ---- */
   if (reduce) {
-    document.querySelectorAll('.showcase__video iframe').forEach(function (f) {
+    document.querySelectorAll('.showcase__videos iframe').forEach(function (f) {
       var src = f.getAttribute("src") || "";
       f.setAttribute("src", src.replace(/background=1&(amp;)?/i, "").replace(/autoplay=1/i, "autoplay=0"));
     });
