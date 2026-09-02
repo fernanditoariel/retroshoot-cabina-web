@@ -82,31 +82,9 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
 }
 
 /* ---------- brand lockup ---------- */
-.brand { display: inline-flex; align-items: baseline; gap: 0.12em; line-height: 1; }
-.brand__script {
-  font-family: var(--font-script);
-  font-size: 1.85em;
-  color: var(--brass-hi);
-  transform: translateY(0.08em);
-}
-.brand__caps {
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 1.12em;
-  letter-spacing: 0.01em;
-}
-.brand__tag {
-  font-family: var(--font-ui);
-  font-size: 0.52em;
-  font-weight: 600;
-  letter-spacing: 0.42em;
-  text-transform: uppercase;
-  color: var(--brass);
-  align-self: center;
-  padding-left: 0.5em;
-  border-left: 1px solid var(--line);
-  margin-left: 0.35em;
-}
+.brand { display: inline-flex; align-items: center; line-height: 0; }
+.brand img { height: 60px; width: auto; display: block; }
+.brand--foot img { height: 76px; }
 
 /* ---------- buttons ---------- */
 .btn {
@@ -614,7 +592,8 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
 
 @media (max-width: 760px) {
   .nav__links { display: none; }
-  .nav__inner { height: 62px; }
+  .nav__inner { height: 64px; }
+  .brand img { height: 48px; }
   .btn--sm { padding: 0.62em 0.95em; font-size: 0.78rem; }
   .hero { min-height: auto; display: block; padding-block: 6rem 3.5rem; }
   .hero__title { font-size: clamp(1.95rem, 1.5rem + 2.6vw, 3rem); max-width: 20ch; }
@@ -629,8 +608,8 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
 }
 
 @media (max-width: 480px) {
-  .brand__tag { display: none; }
-  .brand__script { font-size: 1.7em; }
+  .brand img { height: 44px; }
+  .btn--sm { padding: 0.55em 0.8em; font-size: 0.72rem; }
 }
 
 /* ---------- reduced motion ---------- */
