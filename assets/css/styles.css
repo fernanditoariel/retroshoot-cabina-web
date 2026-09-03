@@ -555,14 +555,27 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
 .foot__links a:hover { color: var(--brass-hi); }
 .foot__base {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+  gap: 0.6rem 1.5rem;
   padding-block: 1.5rem;
   border-top: 1px solid var(--line);
   font-size: 0.8rem;
   color: var(--muted);
 }
 .foot__base a:hover { color: var(--cream); }
+.foot__credit { color: var(--muted); }
+.foot__credit a {
+  color: var(--cream-dim);
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 1px;
+  transition: color 0.2s var(--ease), border-color 0.2s var(--ease);
+}
+.foot__credit a:hover { color: var(--brass-hi); border-color: var(--brass); }
+@media (max-width: 620px) {
+  .foot__base { justify-content: center; text-align: center; }
+}
 
 /* ---------- floating whatsapp ---------- */
 .wa-float {
